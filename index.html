@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Login & Signup Form | CodingNepal</title>
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+        
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" alt="logo">
+                <h2>CodingNepal</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form id="login-form" action="#">
+                    <div class="input-field">
+                        <input type="text" id="login-email" >
+                        <label>Email</label>
+                        <i class="fas fa-check-circle remove"></i>
+                        <i class="fas fa-exclamation-circle remove"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" >
+                        <label>Password</label>
+                        <i class="fas fa-check-circle remove"></i>
+                        <i class="fas fa-exclamation-circle remove"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="inputcheck">
+                        <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form id="signup-form" action="#">
+                    <div class="input-field">
+                        <input type="text" id="username" >
+                        <label>Enter your Fullname</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="signup-email" >
+                        <label>Enter your email</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" >
+                        <label>Create password</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="cpassword" >
+                        <label>Confirm password</label>
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="inputcheck">
+                       
+                            <input type="checkbox" id="policy">
+                            <label for="policy">
+                                <a href="#" class="option">I agree the Terms & Conditions</a>
+                            </label>
+                        
+                        
+                        <div>
+                             <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small class="error-message"></small>
+                        </div>
+                       
+                    </div>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+                
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
