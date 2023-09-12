@@ -22,9 +22,8 @@ signupLoginLink.forEach(link => {
 
 document.getElementById('login-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    if (validateForm('login')) {
-        window.location.href = 'home.html';
-    }
+    validateForm('login');
+    
 });
 
 document.getElementById('signup-form').addEventListener('submit', function (e) {
@@ -34,7 +33,7 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
 
 function validateForm(formType) {
     const emailInput = document.getElementById(`${formType}-email`);
-    const passwordInput = document.getElementById(`${formType}-password`);
+    const passwordInput = document.getElementById('login-password');
    
     const emailVal = emailInput.value.trim();
     const isEmail = (emailVal) =>{
@@ -46,21 +45,38 @@ function validateForm(formType) {
         return true;
     }
     
-        if (!isEmail(emailVal)) {
-            setError(emailInput, 'Invalid email format');
-        } else if (emailVal === '') {
-            setError(emailInput, 'Email is required');
-        } else if (passwordInput.value.trim() === '') {
-            setError(passwordInput, 'Password is required');
-        } else {
-            setSuccess(emailInput, 'Success');
-            setSuccess(passwordInput, 'Success');
-            window.location.href = 'home.html';
-        }
+    let isValid = true; // Flag to track validation status
+
+// Validate email
+if (!isEmail(emailVal)) {
+    setError(emailInput, 'Invalid email format');
+    isValid = false; // Email validation failed
+} else if (emailVal === '') {
+    setError(emailInput, 'Email is required');
+    isValid = false; // Email is required
+} else {
+    setSuccess(emailInput, 'Success');
+}
+
+// Validate password
+if (passwordInput.value.trim() === '') {
+    setError(passwordInput, 'Password is required');
+    isValid = false; // Password is required
+} else {
+    setSuccess(passwordInput, 'Success');
+}
+
+// Navigate to home.html if both email and password are valid
+if (isValid) {
+    window.location.href = 'home.html';
+}
+
+    
         
     
     if (formType === 'signup') {
         const usernameInput = document.getElementById('username');
+        const spasswordInput = document.getElementById('password');
         const cpasswordInput = document.getElementById('cpassword');
         const policyCheckbox = document.getElementById('policy');
        
@@ -71,10 +87,16 @@ function validateForm(formType) {
             setSuccess(usernameInput, 'Success');
         }
 
+        if (spasswordInput.value.trim() === '') {
+            setError(spasswordInput, 'Password is required');
+        } else {
+            setSuccess(spasswordInput, 'Success');
+        }
+
         if (cpasswordInput.value.trim() === '') {
             setError(cpasswordInput, 'Confirm password is required');
         } 
-        else if (cpasswordInput.value.trim() !== passwordInput.value.trim()) {
+        else if (cpasswordInput.value.trim() !== spasswordInput.value.trim()) {
             setError(cpasswordInput, 'Password Not Matched!')
         }
         else {
